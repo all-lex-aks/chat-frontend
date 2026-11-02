@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат</title>
+</head>
+<body>
+    <!-- Модальное окно входа -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal">
+            <h2>Выберите псевдоним</h2>
+            <input type="text" id="nickname-input" placeholder="Ваш никнейм">
+            <div id="login-error" class="error-text"></div>
+            <button id="login-btn">Продолжить</button>
+        </div>
+    </div>
+
+    <!-- Основное окно чата (скрыто по умолчанию) -->
+    <div id="chat-container" class="chat-container hidden">
+        <div class="sidebar">
+            <h3>Участники</h3>
+            <ul id="user-list"></ul>
+        </div>
+        <div class="chat-main">
+            <div id="messages" class="messages-area"></div>
+            <form id="message-form" class="message-form">
+                <input type="text" id="message-input" placeholder="Type your message here" autocomplete="off" required>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+body { background: #f0f0f0; height: 100vh; display: flex; justify-content: center; align-items: center; }
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;
+}
+.modal {
+    background: white; padding: 30px; border-radius: 10px; width: 400px; text-align: center;
+}
+.modal h2 { margin-bottom: 20px; }
+.modal input { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; }
+.modal button { width: 100%; padding: 10px; background: #4a6cf7; color: white; border: none; border-radius: 5px; cursor: pointer; }
+.error-text { color: red; font-size: 14px; margin-bottom: 10px; height: 16px; }
+
+/* Чат */
+.chat-container {
+    width: 900px; height: 600px; background: white; display: flex; border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden;
+}
+.hidden { display: none !important; }
+
+.sidebar {
+    width: 200px; background: #f8f9fa; border-right: 1px solid #ddd; padding: 20px;
+}
+.sidebar h3 { margin-bottom: 15px; font-size: 16px; color: #555; }
+.sidebar ul { list-style: none; }
+.sidebar li { padding: 8px 0; color: #333; border-bottom: 1px solid #eee; }
+
+.chat-main { flex: 1; display: flex; flex-direction: column; }
+.messages-area { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+
+/* Сообщения */
+.message { max-width: 70%; display: flex; flex-direction: column; }
+.message.own { align-self: flex-end; text-align: right; }
+.message.other { align-self: flex-start; text-align: left; }
+.msg-author { font-size: 12px; color: #888; margin-bottom: 4px; }
+.msg-text { padding: 10px 15px; border-radius: 10px; background: #e9ecef; }
+.message.own .msg-text { background: #4a6cf7; color: white; }
+.message.own .msg-author { color: #4a6cf7; }
+
+.message-form { padding: 15px; border-top: 1px solid #ddd; }
+.message-form input {
+    width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 25px; outline: none;
+}
